@@ -56,4 +56,10 @@ public class TreeTest {
     public void cannot_create_tree_with_zero_height(){
         assertThrows(InvalidHeightTreeException.class, () -> Tree.create(0));
     }
+
+    @Test
+    public void cannot_create_tree_with_negative_height(){
+        assertThrows(InvalidHeightTreeException.class, () -> Tree.create(-1));
+        assertThrows(InvalidHeightTreeException.class, () -> Tree.create(Integer.MIN_VALUE));
+    }
 }
