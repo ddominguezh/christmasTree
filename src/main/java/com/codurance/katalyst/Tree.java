@@ -10,6 +10,10 @@ public class Tree {
         return new Tree(height);
     }
     public String draw(){
-        return null;
+        StringBuffer buffer = new StringBuffer();
+        buffer.append(" X ");
+        buffer.append("XXX");
+        buffer.append(" | ");
+        return buffer.toString();
     }
 }

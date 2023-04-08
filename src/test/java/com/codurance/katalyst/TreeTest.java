@@ -13,6 +13,6 @@ public class TreeTest {
         expected.append(" X ");
         expected.append("XXX");
         expected.append(" | ");
-        assertEquals(expected, Tree.create(2).draw());
+        assertEquals(expected.toString(), Tree.create(2).draw());
     }
 }
