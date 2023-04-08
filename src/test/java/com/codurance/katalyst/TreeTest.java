@@ -1,6 +1,7 @@
 package com.codurance.katalyst;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
@@ -49,5 +50,10 @@ public class TreeTest {
         expected.append("XXXXXXXXXXXXXXXXXXX\n");
         expected.append("         |         ");
         assertEquals(expected.toString(), Tree.create(10).draw());
+    }
+
+    @Test
+    public void can_not_create_tree_with_height_zero(){
+        assertThrows(InvalidHeightTreeException.class, () -> Tree.create(0));
     }
 }
