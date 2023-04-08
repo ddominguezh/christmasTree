@@ -13,41 +13,40 @@ public class Tree {
     }
     public String draw(){
         StringBuffer buffer = new StringBuffer();
-        int width = getWidth();
         for(int row = 0 ; row < height ; row++){
-            buffer.append(drawBranches(width, row));
+            buffer.append(drawBranches(row));
         }
-        buffer.append(drawTrunk(width));
+        buffer.append(drawTrunk());
         return buffer.toString();
     }
 
-    private int getWidth(){
-        return height * 2 - 1;
-    }
-
-    private String drawBranches(int width, int row){
-        String[] branch = initArray(width);
-        int start = getCenterPosition(width) - row;
-        int end = getCenterPosition(width) + row;
+    private String drawBranches(int row){
+        String[] branch = initArray();
+        int start = getCenterPosition() - row;
+        int end = getCenterPosition() + row;
         for (int position = start ; position <= end ; position++ ) {
             branch[position] = "X";
         }
         return String.join("",branch) +  "\n";
     }
 
-    private String drawTrunk(int width){
-        String[] trunk = initArray(width);
-        trunk[ getCenterPosition(width) ] = "|";
+    private String drawTrunk(){
+        String[] trunk = initArray();
+        trunk[ getCenterPosition() ] = "|";
         return String.join("",trunk);
     }
 
-    private String[] initArray(int width){
-        String[] array = new String[width];
+    private String[] initArray(){
+        String[] array = new String[getWidth()];
         Arrays.fill(array, " ");
         return array;
     }
 
-    private int getCenterPosition(int width){
-        return width / 2;
+    private int getCenterPosition(){
+        return getWidth() / 2;
+    }
+
+    private int getWidth(){
+        return height * 2 - 1;
     }
 }
