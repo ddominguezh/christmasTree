@@ -11,9 +11,16 @@ public class Tree {
     }
     public String draw(){
         StringBuffer buffer = new StringBuffer();
-        buffer.append(" X ");
-        buffer.append("XXX");
-        buffer.append(" | ");
+        if(height == 2){
+            buffer.append(" X ");
+            buffer.append("XXX");
+            buffer.append(" | ");
+        }else if(height == 3){
+            buffer.append("  X  ");
+            buffer.append(" XXX ");
+            buffer.append("XXXXX");
+            buffer.append("  |  ");
+        }
         return buffer.toString();
     }
 }
