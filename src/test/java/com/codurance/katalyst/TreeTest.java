@@ -7,6 +7,15 @@ import org.junit.jupiter.api.Test;
 public class TreeTest {
     
     @Test
+    public void create_tree_with_height_one()
+    {
+        StringBuffer expected = new StringBuffer();
+        expected.append("X\n");
+        expected.append("|");
+        assertEquals(expected.toString(), Tree.create(1).draw());
+    }
+
+    @Test
     public void create_tree_with_height_two()
     {
         StringBuffer expected = new StringBuffer();
