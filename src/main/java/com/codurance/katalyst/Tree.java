@@ -9,7 +9,7 @@ public class Tree {
         this.height = height;
     }
     public static Tree create(int height){
-        if(height == 0){
+        if(height <= 0){
             throw new InvalidHeightTreeException(height);
         }
         return new Tree(height);
