@@ -25,4 +25,20 @@ public class TreeTest {
         expected.append("  |  ");
         assertEquals(expected.toString(), Tree.create(3).draw());
     }
+    @Test
+    public void create_tree_with_height_ten(){
+        StringBuffer expected = new StringBuffer();
+        expected.append("         X         \n");
+        expected.append("        XXX        \n");
+        expected.append("       XXXXX       \n");
+        expected.append("      XXXXXXX      \n");
+        expected.append("     XXXXXXXXX     \n");
+        expected.append("    XXXXXXXXXXX    \n");
+        expected.append("   XXXXXXXXXXXXX   \n");
+        expected.append("  XXXXXXXXXXXXXXX  \n");
+        expected.append(" XXXXXXXXXXXXXXXXX \n");
+        expected.append("XXXXXXXXXXXXXXXXXXX\n");
+        expected.append("         |         ");
+        assertEquals(expected.toString(), Tree.create(10).draw());
+    }
 }

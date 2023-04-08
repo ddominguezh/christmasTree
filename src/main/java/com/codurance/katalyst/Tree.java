@@ -1,5 +1,7 @@
 package com.codurance.katalyst;
 
+import java.util.Arrays;
+
 public class Tree {
     
     private int height;
@@ -11,16 +13,28 @@ public class Tree {
     }
     public String draw(){
         StringBuffer buffer = new StringBuffer();
+        int width = getWidth();
+
         if(height == 2){
             buffer.append(" X \n");
             buffer.append("XXX\n");
-            buffer.append(" | ");
         }else if(height == 3){
             buffer.append("  X  \n");
             buffer.append(" XXX \n");
             buffer.append("XXXXX\n");
-            buffer.append("  |  ");
         }
+        buffer.append(drawTrunk(width));
         return buffer.toString();
+    }
+
+    private int getWidth(){
+        return height * 2 - 1;
+    }
+
+    private String drawTrunk(int width){
+        String[] trunk = new String[width];
+        Arrays.fill(trunk, " ");
+        trunk[ (width - 1) / 2 ] = "|";
+        return String.join("",trunk);
     }
 }
