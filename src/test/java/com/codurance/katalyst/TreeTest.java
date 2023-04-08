@@ -53,7 +53,7 @@ public class TreeTest {
     }
 
     @Test
-    public void can_not_create_tree_with_height_zero(){
+    public void cannot_create_tree_with_zero_height(){
         assertThrows(InvalidHeightTreeException.class, () -> Tree.create(0));
     }
 }
