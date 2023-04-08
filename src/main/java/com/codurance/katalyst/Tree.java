@@ -14,8 +14,8 @@ public class Tree {
     public String draw(){
         StringBuffer buffer = new StringBuffer();
         int width = getWidth();
-        for(int i = 0 ; i < height ; i++){
-            buffer.append(drawBranches(width, i));
+        for(int row = 0 ; row < height ; row++){
+            buffer.append(drawBranches(width, row));
         }
         buffer.append(drawTrunk(width));
         return buffer.toString();
@@ -25,10 +25,10 @@ public class Tree {
         return height * 2 - 1;
     }
 
-    private String drawBranches(int width, int height){
+    private String drawBranches(int width, int row){
         String[] branch = initArray(width);
-        int start = getCenterPosition(width) - height;
-        int end = getCenterPosition(width) + height;
+        int start = getCenterPosition(width) - row;
+        int end = getCenterPosition(width) + row;
         for (int position = start ; position <= end ; position++ ) {
             branch[position] = "X";
         }
