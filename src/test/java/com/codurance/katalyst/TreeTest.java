@@ -1,0 +1,18 @@
+package com.codurance.katalyst;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
+
+public class TreeTest {
+    
+    @Test
+    public void create_tree_with_height_two()
+    {
+        StringBuffer expected = new StringBuffer();
+        expected.append(" X ");
+        expected.append("XXX");
+        expected.append(" | ");
+        assertEquals(expected, Tree.create(2).draw());
+    }
+}
