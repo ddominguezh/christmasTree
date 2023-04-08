@@ -10,8 +10,8 @@ public class TreeTest {
     public void create_tree_with_height_two()
     {
         StringBuffer expected = new StringBuffer();
-        expected.append(" X ");
-        expected.append("XXX");
+        expected.append(" X \n");
+        expected.append("XXX\n");
         expected.append(" | ");
         assertEquals(expected.toString(), Tree.create(2).draw());
     }
@@ -19,9 +19,9 @@ public class TreeTest {
     @Test
     public void create_tree_with_height_three(){
         StringBuffer expected = new StringBuffer();
-        expected.append("  X  ");
-        expected.append(" XXX ");
-        expected.append("XXXXX");
+        expected.append("  X  \n");
+        expected.append(" XXX \n");
+        expected.append("XXXXX\n");
         expected.append("  |  ");
         assertEquals(expected.toString(), Tree.create(3).draw());
     }
