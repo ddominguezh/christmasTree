@@ -12,13 +12,13 @@ public class Tree {
     public String draw(){
         StringBuffer buffer = new StringBuffer();
         if(height == 2){
-            buffer.append(" X ");
-            buffer.append("XXX");
+            buffer.append(" X \n");
+            buffer.append("XXX\n");
             buffer.append(" | ");
         }else if(height == 3){
-            buffer.append("  X  ");
-            buffer.append(" XXX ");
-            buffer.append("XXXXX");
+            buffer.append("  X  \n");
+            buffer.append(" XXX \n");
+            buffer.append("XXXXX\n");
             buffer.append("  |  ");
         }
         return buffer.toString();
