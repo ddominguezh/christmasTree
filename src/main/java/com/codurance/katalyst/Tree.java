@@ -26,20 +26,24 @@ public class Tree {
     }
 
     private String drawBranches(int width, int height){
-        String[] trunk = new String[width];
-        Arrays.fill(trunk, " ");
+        String[] branch = initArray(width);
         int start = (width / 2) - height;
         int end = (width / 2) + height;
         for (int position = start ; position <= end ; position++ ) {
-            trunk[position] = "X";
+            branch[position] = "X";
         }
-        return String.join("",trunk) +  "\n";
+        return String.join("",branch) +  "\n";
     }
 
     private String drawTrunk(int width){
-        String[] trunk = new String[width];
-        Arrays.fill(trunk, " ");
+        String[] trunk = initArray(width);
         trunk[ (width - 1) / 2 ] = "|";
         return String.join("",trunk);
+    }
+
+    private String[] initArray(int width){
+        String[] array = new String[width];
+        Arrays.fill(array, " ");
+        return array;
     }
 }
